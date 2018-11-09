@@ -49,6 +49,7 @@ header #branding{
 
 header #branding h1{
     margin:0;
+    margin-left:30px;
 }
 
 header nav{
@@ -56,8 +57,12 @@ header nav{
     margin-top:10px;
 }
 
+nav ul li {
+  margin-right:23px;
+}
+
 header .highlight, header .current a{
-    color:#e8491d;
+    color:#2b67e7;
     font-weight:bold;
   }
   
@@ -96,6 +101,7 @@ header .highlight, header .current a{
   
   #newsletter h1{
     float:left;
+    margin-left:23px;
   }
   
   #newsletter form {
@@ -119,6 +125,7 @@ header .highlight, header .current a{
     text-align: center;
     width:30%;
     padding:80px;
+    margin: auto;
   }
   
   #boxes .box img{
@@ -194,3 +201,15 @@ header .highlight, header .current a{
     }
   }
   
+
+  button {
+    border: solid 5px;
+    color: #163bb8;
+    border-radius: 15px;
+   -moz-border-radius: 5px;
+    background: black;
+    font-size: 20px;
+  }
+  button:hover {
+    color:green;
+  }

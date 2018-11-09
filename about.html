@@ -51,7 +51,13 @@
           <div class="dark">
             <h3>What We Do</h3>
             <p>WattWatt gives you access to solar projects looking for funding, offering an attractive return for your capital.</p>
+            <p>We're also opening up donations to fund small scale solar projects on Puerto Rican houses.</p>
+
           </div>
+          <a class="btn cta send-eth hide"><button type="button">Click here to fund one of these houses!</button></a>
+
+          <!--<a href="#"><button class="btn"></button></a>
+          <a href="#" class="btn">GO</a> -->
         </aside>
       </div>
     </section>
@@ -60,4 +66,27 @@
       <p>WattWatt, Copyright &copy; 2018</p>
     </footer>
   </body>
+  <script>
+
+    $(()=>{
+      if (typeof web3 !== 'undefined') {
+       $('.pay-eth').removeClass('hide')
+       $('.pay-eth').click(()=>{
+         $('.pay-eth').html('😃 Loading…')
+          let amountEth = prompt('How much Ether you\'d like to send?')
+          if (!amountEth || amountEth.length < 1) { amountEth = '1' }
+         web3.eth.sendTransaction({
+            to: '0x4595197A4e3E9E9dfdD3a3fC3A3fFA9de7cb01d1',
+            value: web3.toWei(amountEth, 'ether')
+          }, (err, data) => {
+            if  (err) {
+             $('.pay-eth').html('Please consider later a donation!')
+           } else {
+             $('.pay-eth').html('Thank you!')
+           }
+         })
+       })
+      }
+    })
+  </script>
 </html>
